@@ -22,7 +22,7 @@ public final class SessionTimerEngine: ObservableObject {
         if h > 0 { return String(format: "%02d:%02d:%02d", h, m, sec) }
         return String(format: "%02d:%02d", m, sec)
     }
-
+ 
     private let sessionsRepo: SessionsRepository
     private var tickCancellable: AnyCancellable?
     private var backgroundCancellable: AnyCancellable?

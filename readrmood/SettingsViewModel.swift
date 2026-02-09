@@ -17,8 +17,8 @@ public final class SettingsViewModel: ObservableObject {
         observePersistenceErrors()
     }
 
-    // MARK: - Appearance
 
+    
     public var isDarkModeEnabled: Bool {
         get { appSettings.isDarkModeEnabled }
         set {
@@ -53,14 +53,14 @@ public final class SettingsViewModel: ObservableObject {
         var s = appSettings
         s.privacyURLString = value.trimmingCharacters(in: .whitespacesAndNewlines)
         if URL(string: s.privacyURLString) == nil {
-            s.privacyURLString = "https://stakankofe.github.io/MyBookApp/"
+            s.privacyURLString = "https://yarakselim.github.io/roadrprivacy"
         }
         appSettings = s
         persistence.saveSettings(s)
     }
 
-    // MARK: - Data Management
 
+    
     public func eraseAllData(
         readingRepo: ReadingRepository,
         sessionsRepo: SessionsRepository,
@@ -73,8 +73,8 @@ public final class SettingsViewModel: ObservableObject {
         lastActionMessage = "All local data erased"
     }
 
-    // MARK: - Helpers
 
+    
     private func enforceDefaults() {
         var s = appSettings
         if s.privacyURL.scheme == nil { s.privacyURLString = "https://google.com" }

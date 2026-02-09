@@ -15,7 +15,7 @@ public final class ReadingRepository: ObservableObject {
         self.books = persistence.loadBooks()
         normalize()
     }
-
+ 
     @discardableResult
     public func addBook(title: String, author: String, totalPages: Int, currentPage: Int = 0) -> Book {
         let safeTotal = max(0, totalPages)
